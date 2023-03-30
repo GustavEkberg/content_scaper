@@ -12,7 +12,6 @@ pub async fn extract_url_content(url: &str) -> Result<Option<String>, Box<dyn Er
     let response = client.get(url).send().await?;
     let html = response.text().await?;
     let parsed_html = Html::parse_document(&html);
-    println!("Parsed HTML: {:?}", parsed_html);
 
     let mut all_elements = parsed_html
         .select(&Selector::parse("main").unwrap())
