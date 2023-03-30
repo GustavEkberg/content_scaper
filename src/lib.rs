@@ -1,5 +1,7 @@
 pub mod content;
 
+pub use content::extract_url_content;
+
 #[cfg(test)]
 mod tests {
     use crate::content::extract_url_content;
