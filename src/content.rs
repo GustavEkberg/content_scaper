@@ -18,7 +18,6 @@ pub async fn extract_url_content(url: &str) -> Result<Option<String>, Box<dyn Er
         .select(&Selector::parse("main").unwrap())
         .collect::<Vec<_>>();
 
-    dbg!(all_elements.len());
     if all_elements.is_empty() {
         all_elements = parsed_html
             .select(&Selector::parse("article").unwrap())
