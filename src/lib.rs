@@ -1,4 +1,4 @@
-pub mod content;
+mod content;
 
 pub use content::extract_url_content;
 
